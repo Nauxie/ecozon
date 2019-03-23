@@ -1,0 +1,6 @@
+  {
+    "name": "EcoZon",
+    "version": "1.0",
+    "description": "rates amazon products based off their environmental friendliness",
+    "manifest_version": 2
+  }
