@@ -1,7 +1,9 @@
 // Load new image
-var newImage = document.createElement("img");
+var newImage = document.createElement("div");
 // and give it some content 
-newImage.src = chrome.extension.getURL("/images/get_started32.png");
+newImage.id="toolimg";
+
+newImage.style.backgroundImage = `url(${chrome.extension.getURL("/images/get_started32.png")})`;
 newImage.style.width = '1em';
 
 
