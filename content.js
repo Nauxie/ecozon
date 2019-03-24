@@ -1,7 +1,7 @@
 // Load new image
 var newImage = document.createElement("div");
 // and give it some content 
-newImage.id="toolimg";
+//newImage.id="toolimg";
 
 newImage.style.backgroundImage = `url(${chrome.extension.getURL("/images/get_started32.png")})`;
 newImage.style.width = '1em';
@@ -15,8 +15,14 @@ newImage.style.width = '1em';
 // 4. Add a close button with an addEventListener('click', () => {}) so that it closes the tooltip when done (by toggling element.style.display between 'none' and 'block')
 ////newImage.setAttribute('title', '_new content_');
 var toolbar = document.createElement("div");
-toolbar.innerHTML="<span class=tooltip> hello </span>";
 toolbar.class="toolbar";
+toolbar.onmouseover = () =>{
+    toolbar.innerHTML="<span class=tooltip> hello </span>";
+    toolbar.style.visibility = "visible";
+}
+toolbar.onmouseout = () =>{
+    toolbar.style.visibility = "hidden";
+}
 newImage.appendChild(toolbar);
 
 
