@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+// Load new image
+
+var newImage = document.createElement("div");
+// and give it some content 
+//newImage.id="toolimg";
+>>>>>>> 8e826e838c888e725bf6a4870b5c2aacf4a4b206
 
 // Create a container for all the new code
 var container = document.createElement("div");
@@ -11,6 +19,10 @@ logo.style.cursor = 'pointer';
 container.appendChild(logo);
 
 //newImage.innerText+=" ";
+<<<<<<< HEAD
+=======
+//newImage.style.visibility="visible";
+>>>>>>> 8e826e838c888e725bf6a4870b5c2aacf4a4b206
 //newImage.style.width = '1em';
 
 
@@ -21,6 +33,7 @@ container.appendChild(logo);
 // 4. Add a close button with an addEventListener('click', () => {}) so that it closes the tooltip when done (by toggling element.style.display between 'none' and 'block')
 ////newImage.setAttribute('title', '_new content_');
 //<span class=tooltip>
+<<<<<<< HEAD
 
 // Create a tooltip
 var tooltip = document.createElement("div");
@@ -58,6 +71,29 @@ logo.addEventListener('click', function (e) {
 
 // add the newly created image to the product title object
 document.getElementById("ask_feature_div").appendChild(container);
+=======
+var toolbar = document.createElement("div");
+let ele = document.createElement("div");
+let ce = document.createElement("img");
+ce.src=chrome.extension.getURL("/img/stars.png");
+ele.dataset.value=50;
+if(ele.dataset.value){
+ce.style.backgroundImage = `url(${chrome.extension.getURL("/img/bar.png")})`;
+ce.style.backgroundPositionX = `${100-ele.dataset.value}%`;
+}else{
+  ce.style.backgroundColor = "red";
+}
+ele.appendChild(ce);
+toolbar.innerText+="hello";
+toolbar.class="toolbar";
+newImage.appendChild(logo);
+toolbar.appendChild(ele);
+newImage.appendChild(toolbar);
+
+// add the newly created image to the product title object
+insertBElement = document.getElementById("averageCustomerReviews_feature_div")
+insertBElement.parentNode.insertBefore(newImage,insertBElement);
+>>>>>>> 8e826e838c888e725bf6a4870b5c2aacf4a4b206
 
 // add the newly created element and its content into the DOM 
 var currentDiv = document.getElementById("productTitle");
