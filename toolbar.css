@@ -1,5 +1,7 @@
 .toolbar {
-    position:relative;
+    position:sticky;
+    background-color: darkgreen;
+    font-weight: bold;
 
 }
 /*
