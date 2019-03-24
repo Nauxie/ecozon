@@ -44,3 +44,6 @@ let defineNewElement = (o)=>{
       ele.appendChild(ce);
     }
   })
+  
+var stars = document.createElement("env-star");
+stars.id="env-stars";

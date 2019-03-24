@@ -1,4 +1,5 @@
 // Load new image
+
 var newImage = document.createElement("div");
 // and give it some content 
 //newImage.id="toolimg";
@@ -8,7 +9,7 @@ let logo = document.createElement("img");
 logo.src= chrome.extension.getURL("/images/get_started32.png");
 
 //newImage.innerText+=" ";
-newImage.style.visibility="visible";
+//newImage.style.visibility="visible";
 //newImage.style.width = '1em';
 
 
@@ -21,9 +22,21 @@ newImage.style.visibility="visible";
 ////newImage.setAttribute('title', '_new content_');
 //<span class=tooltip>
 var toolbar = document.createElement("div");
-toolbar.innerHTML+=" hello";
+let ele = document.createElement("div");
+let ce = document.createElement("img");
+ce.src=chrome.extension.getURL("/img/stars.png");
+ele.dataset.value=50;
+if(ele.dataset.value){
+ce.style.backgroundImage = `url(${chrome.extension.getURL("/img/bar.png")})`;
+ce.style.backgroundPositionX = `${100-ele.dataset.value}%`;
+}else{
+  ce.style.backgroundColor = "red";
+}
+ele.appendChild(ce);
+toolbar.innerText+="hello";
 toolbar.class="toolbar";
 newImage.appendChild(logo);
+toolbar.appendChild(ele);
 newImage.appendChild(toolbar);
 
 // add the newly created image to the product title object
