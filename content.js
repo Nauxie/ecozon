@@ -27,7 +27,7 @@ newImage.appendChild(logo);
 newImage.appendChild(toolbar);
 
 // add the newly created image to the product title object
-document.getElementById("ask_feature_div").appendChild(newImage);
+document.getElementById("productTitle").appendChild(newImage);
 
 // add the newly created element and its content into the DOM 
 var currentDiv = document.getElementById("productTitle");
