@@ -25,6 +25,9 @@ let defineNewElement = (o)=>{
       
     }
   }
+  //it makes able to use <env-star data-value="50"></env-star> to make star-rate-element
+  //value of data-value option would be percent of stars.
+  //example: <env-star data-value="100"></env-star> will be 5 stars.
   defineNewElement({
     tagname:"env-star",
     init: (ele)=>{
