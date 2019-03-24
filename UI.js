@@ -1,3 +1,4 @@
+//defineNewElement({tagname:"your original tag name",init:function(self){~~actions~~}})
 let defineNewElement = (o)=>{
     if(customElements){
         //some browser does not support customElements yet
