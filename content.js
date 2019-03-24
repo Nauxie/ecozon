@@ -38,13 +38,42 @@ tooltip.style.padding = '1em';
 tooltip.style.zIndex = 1000;
 tooltip.style.borderRadius = '10px';
 
+var xhr = new XMLHttpRequest();
+xhr.open('GET', "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=EWG+Verified", true);
+xhr.send();
+ 
+xhr.onreadystatechange = processRequest;
+
+var title = document.getElementById('productTitle').textContent.trim();
+var altTitle = "HENLO HENLO LOS ALTOS HACKS";
+//alert(altTitle.replace(/\s/g, ''));
+
+
+
+function processRequest(e) {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        var allProducts = JSON.parse(xhr.responseText);
+        
+        tooltip.innerHTML = '<div><h1><font color="red">Bad!</font></h1></div>';
+        //alert(allProducts);
+        for (let index in allProducts) {
+            let product = allProducts[index];
+            
+            if (title.toLowerCase().replace(/\s/g,'').includes(product.brand.toLowerCase().replace(/\s/g,''))) {
+                
+                tooltip.innerHTML = '<div><h1><font color="green">Good!</font></h1></div>'  ;
+            }
+        }
+    }
+}
+
 // HERE ADD CONTENT
 // Either through createElement + tooltip.appendChild
 // OR with tooltip.innerHTML
 //tooltip.innerHTML("hello");
 
 tooltip.innerHTML = `
-<span style="">Hello World</span>
+<h1> <font color='green'> Helo World </font></h1>
 <a href="http://google.com">Google</a>
 `;
 
