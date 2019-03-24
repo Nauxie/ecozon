@@ -37,6 +37,7 @@ tooltip.style.border = '1px solid grey';
 tooltip.style.padding = '1em';
 tooltip.style.zIndex = 1000;
 tooltip.style.borderRadius = '10px';
+tooltip.style.backgroundColor = 'black';
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=EWG+Verified", true);
@@ -54,14 +55,19 @@ function processRequest(e) {
     if (xhr.readyState == 4 && xhr.status == 200) {
         var allProducts = JSON.parse(xhr.responseText);
         
-        tooltip.innerHTML = '<div><h1><font color="red">Bad!</font></h1></div>';
+        tooltip.innerHTML = `<div>
+        <h1>
+        <font color="yellow">Potentially Unsafe</font>
+        <img src= https://www.csb.gov/cms/images/layout/emergency-aid-icon.png style="width:32px; length: 32px"/>
+        </h1>
+        </div>`;
         //alert(allProducts);
         for (let index in allProducts) {
             let product = allProducts[index];
             
             if (title.toLowerCase().replace(/\s/g,'').includes(product.brand.toLowerCase().replace(/\s/g,''))) {
                 
-                tooltip.innerHTML = '<div><h1><font color="green">Good!</font></h1></div>'  ;
+                tooltip.innerHTML = `<div><h1><font color="green">Safe! </font></h1></div>` ;
             }
         }
     }
