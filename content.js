@@ -57,17 +57,24 @@ function processRequest(e) {
         
         tooltip.innerHTML = `<div>
         <h1>
+        <font color="white"> According to the Environmental Work Group, this product is </font>   
         <font color="yellow">Potentially Unsafe</font>
         <img src= https://www.csb.gov/cms/images/layout/emergency-aid-icon.png style="width:32px; length: 32px"/>
         </h1>
-        </div>`;
+        </div>`;    
         //alert(allProducts);
         for (let index in allProducts) {
             let product = allProducts[index];
             
             if (title.toLowerCase().replace(/\s/g,'').includes(product.brand.toLowerCase().replace(/\s/g,''))) {
+                tooltip.style.backgroundColor = 'white';
                 
-                tooltip.innerHTML = `<div><h1><font color="green">Safe! </font></h1></div>` ;
+                tooltip.innerHTML = `<div><h1>
+                <font color="black"> According to the Environmental Work Group, this product is </font>
+                <font color="#36f76d">Safe!
+                 </font>
+                 <img src = https://previews.123rf.com/images/feelisgood/feelisgood1709/feelisgood170900571/85723185-flat-check-mark-icon-addition-circle-sign-choice-round-button-quick-and-easy-recolorable-shape-isola.jpg style="width:32px; length: 32px"/>
+                 </h1></div>` ;
             }
         }
     }
