@@ -35,6 +35,7 @@
     "content_scripts": [{
     
       "js": ["content.js"],
+      "css": ["toolbar.css"],
       "matches": ["https://www.amazon.com/*"]
     }]
   }

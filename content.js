@@ -20,9 +20,6 @@ toolbar.onmouseover = () =>{
     toolbar.innerHTML="<span class=tooltip> hello </span>";
     toolbar.style.visibility = "visible";
 }
-toolbar.onmouseout = () =>{
-    toolbar.style.visibility = "hidden";
-}
 newImage.appendChild(toolbar);
 
 
