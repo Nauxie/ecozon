@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+  {
+    "name": "EcoZon",
+    "version": "1.0",
+    "description": "rates amazon products based off their environmental friendliness",
+    
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["http://www.amazon.com/*"],
+        "css": ["mystyles.css"],
+        "js": [ "myscript.js"]
+      }
+    ],
+    
+    "manifest_version": 2
+  }
+=======
   {
     "name": "EcoZon",
     "version": "1.0.0",
@@ -39,3 +60,4 @@
     }]
   }
 
+>>>>>>> 1275680a206a7adf8ea3837bec3c55b28481e595
