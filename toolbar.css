@@ -1,7 +1,8 @@
 .toolbar {
-    visibility: hidden;
-    
+    position:relative;
+
 }
+/*
 .toolbar :hover{
     visibility: visible;
 }
