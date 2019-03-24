@@ -1,5 +1,6 @@
 let defineNewElement = (o)=>{
     if(customElements){
+        //some browser does not support customElements yet
       customElements.define(o.tagname,
         class extends HTMLElement {
           constructor() {
